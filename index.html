@@ -10,6 +10,28 @@
 </head>
 
 <body>
+
+
+    <div id="loader-overlay">
+        <div class="loader-content">
+            <div class="circular-loader">
+                <svg viewBox="25 25 50 50">
+    <defs>
+        <linearGradient id="loader-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#5F27D1"/>
+            <stop offset="100%" stop-color="#2B8AE3"/>
+        </linearGradient>
+    </defs>
+    <circle class="loader-bg" cx="50" cy="50" r="20"></circle>
+    <circle class="loader-fg" cx="50" cy="50" r="20"></circle>
+</svg>
+                <div class="loader-counter" id="loader-counter">0%</div>
+            </div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
+
     <nav>
         <div class="logo">PLAY<span>NFT</span></div>
         <div class="mobile-menu-toggle">

@@ -1,4 +1,6 @@
-gsap.registerPlugin(ScrollTrigger);
+
+function startMainAnimations(){
+  gsap.registerPlugin(ScrollTrigger);
 
 // Mobile menu functionality
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
@@ -333,4 +335,45 @@ gsap.to(".footer-bar", {
   y: 0,
   duration: 1.1,
   ease: "power3.out"
+});
+
+
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('loader-overlay');
+    const counter = document.getElementById('loader-counter');
+    const fgCircle = document.querySelector('.loader-fg');
+    const circularLoader = document.querySelector('.circular-loader');
+    let percent = 0;
+    const duration = 5500; // 5.5 seconds
+    const interval = duration / 100;
+
+    const animate = setInterval(() => {
+        percent++;
+        counter.textContent = percent + '%';
+        const offset = 126 - (126 * percent / 100);
+        fgCircle.style.strokeDashoffset = offset;
+        const scale = 1 + percent * 0.2 / 100;
+        circularLoader.style.transform = `scale(${scale})`;
+        if (percent >= 100) {
+            clearInterval(animate);
+            setTimeout(() => {
+                loader.style.opacity = 0;
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    startMainAnimations(); // <-- YAHAN CALL KAREIN
+                }, 600);
+            }, 100);
+        }
+    }, interval);
+
+    setTimeout(() => {
+        loader.style.opacity = 0;
+        setTimeout(() => {
+            loader.style.display = 'none';
+            // startMainAnimations(); // <-- fallback ke liye bhi
+        }, 600);
+    }, duration + 1000);
 });
