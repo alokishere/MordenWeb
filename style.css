@@ -38,6 +38,13 @@ nav .logo {
 nav .logo span {
   padding: 0 4px;
   background: linear-gradient(to right, #5F27D1, #2B8AE3);
+  background: linear-gradient(135deg, #7f5fff 0%, #1e90ff 100%);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 12px;
+  margin-left: 8px;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 15px rgba(127, 95, 255, 0.3);
 }
 nav .mobile-menu-toggle {
   display: none;
@@ -1409,4 +1416,38 @@ nav .btn2 {
 }
 .footer-social a:hover:after {
   opacity: 1;
+}
+
+.footer-bar {
+  width: 100%;
+  background: linear-gradient(90deg, #5F27D1 0%, #2B8AE3 100%);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 8vw;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -2px 24px rgba(43, 138, 227, 0.3333333333);
+  opacity: 0;
+  transform: translateY(40px);
+}
+.footer-bar a {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 0.5rem;
+  transition: color 0.2s;
+}
+.footer-bar a:hover {
+  color: #ffe082;
+}
+@media (max-width: 600px) {
+  .footer-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 4vw;
+    font-size: 0.95rem;
+    border-radius: 10px 10px 0 0;
+  }
 }

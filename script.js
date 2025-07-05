@@ -322,3 +322,15 @@ document.querySelectorAll('.footer-social a').forEach(icon => {
   });
 });
 
+// Animate the bottom footer bar
+gsap.to(".footer-bar", {
+  scrollTrigger: {
+    trigger: ".footer-bar",
+    start: "top 98%",
+    toggleActions: "play none none reverse"
+  },
+  opacity: 1,
+  y: 0,
+  duration: 1.1,
+  ease: "power3.out"
+});
