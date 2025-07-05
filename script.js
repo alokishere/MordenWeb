@@ -65,7 +65,7 @@ gsap.utils.toArray(".btn button").forEach((btn, i) => {
 });
 
 // Section1 left h1 and p animate on scroll
-gsap.from([".section1 .left h1", ".section1 .left p"], {
+gsap.from([".section1 .left p"], {
   scrollTrigger: {
     trigger: ".section1 .left h1",
     start: "top 80%",
